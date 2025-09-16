@@ -13,8 +13,10 @@ export default function HomeScreen() {
   const orderCoffee = useOrderStore((state) => state.orderCoffee);
 
   return (
-    <ThemedView style={{ flex: 1 }}>
-      <ThemedText type="title">Coffees</ThemedText>
+    <ThemedView style={{ flex: 1, padding: 8 }}>
+      <ThemedText style={{ marginBottom: 4, marginTop: 8 }} type="title">
+        Coffees
+      </ThemedText>
       <FlashList
         data={coffees}
         renderItem={({ item }) => (
@@ -26,8 +28,11 @@ export default function HomeScreen() {
                 width: "100%",
               }}
             >
-              <ThemedView style={{ flexDirection: "row" }}>
-                <Image source={item.image} style={{ width: 50, height: 50 }} />
+              <ThemedView style={{ flexDirection: "row", marginBottom: 8 }}>
+                <Image
+                  source={item.image}
+                  style={{ width: 50, height: 50, borderRadius: 8 }}
+                />
                 <ThemedView style={{ paddingLeft: 8 }}>
                   <ThemedText style={{ fontWeight: "700" }}>
                     {item.name}
